@@ -12,6 +12,7 @@ import {
 } from 'react-native';
 
 import AppScreen from './src/components/app-screen';
+import AppMainView from './src/components/app-main-view';
 
 class AppContainer extends React.Component {
   state = {
@@ -29,9 +30,9 @@ class AppContainer extends React.Component {
   render() {
     const {loading} = this.state;
     return (
-      <View>
+      <View styles={styles.appContainer}>
         {
-          loading ? <AppScreen /> : null
+          loading ? <AppScreen /> : <AppMainView />
         }
       </View>
     );
