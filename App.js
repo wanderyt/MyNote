@@ -10,8 +10,8 @@ import {
   NavigatorIOS,
   View,
 } from 'react-native';
-
 import AppScreen from './src/components/app-screen';
+import AppMainView from './src/components/app-main-view';
 
 class AppContainer extends React.Component {
   state = {
@@ -31,7 +31,7 @@ class AppContainer extends React.Component {
     return (
       <View>
         {
-          loading ? <AppScreen /> : null
+          loading ? <AppScreen /> : <AppMainView />
         }
       </View>
     );
