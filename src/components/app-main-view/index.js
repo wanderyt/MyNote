@@ -9,7 +9,8 @@ class AppMainView extends React.Component {
   render() {
     return (
       <View style={styles.appMainView}>
-        <Button>Test Button</Button>
+        <Button type='primary'>Normal Button</Button>
+        <Button type='ghost'>Quick Button</Button>
       </View>
     );
   }
@@ -17,7 +18,7 @@ class AppMainView extends React.Component {
 
 const styles = StyleSheet.create({
   appMainView: {
-    flexDirection: 'column',
+    flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
     height: '100%',
