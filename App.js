@@ -10,6 +10,7 @@ import {
   NavigatorIOS,
   View,
 } from 'react-native';
+
 import AppScreen from './src/components/app-screen';
 import AppMainView from './src/components/app-main-view';
 
@@ -23,7 +24,7 @@ class AppContainer extends React.Component {
       this.setState({
         loading: false
       });
-    }, 1000);
+    }, 100);
   }
 
   render() {
@@ -31,7 +32,7 @@ class AppContainer extends React.Component {
     return (
       <View>
         {
-          loading ? <AppScreen /> : <AppMainView />
+          loading ? <AppScreen /> : <AppMainView {...this.props} />
         }
       </View>
     );
@@ -43,6 +44,7 @@ export default class App extends React.Component {
     return (
       <NavigatorIOS
         style={styles.container}
+        navigationBarHidden={true}
         initialRoute={{
           title: 'My Expense Note',
           component: AppContainer,

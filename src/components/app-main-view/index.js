@@ -3,14 +3,25 @@ import {
   View,
   StyleSheet,
 } from 'react-native';
-import {Button} from 'react-native-material-ui';
+import {Button} from 'react-native-elements';
+
+import CreateNote from '../app-create-note';
 
 class AppMainView extends React.Component {
+  createNote = () => {
+    this.props.navigator.push({
+      title: 'Results',
+      component: CreateNote,
+      passProps: {text: 'Normal Note'}
+    });
+  }
+
   render() {
     return (
       <View style={styles.appMainView}>
-        <Button>Normal Note</Button>
-        <Button>Quick Note</Button>
+        <Button raised title="Normal Note"
+          onPress={this.createNote} />
+        <Button raised title="Quick Note" />
       </View>
     );
   }
@@ -18,10 +29,11 @@ class AppMainView extends React.Component {
 
 const styles = StyleSheet.create({
   appMainView: {
-    flexDirection: 'column',
+    flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
     height: '100%',
+    backgroundColor: '#F5FCFF',
   },
 });
 
