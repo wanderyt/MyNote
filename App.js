@@ -10,7 +10,7 @@ import {
   NavigatorIOS,
   View,
 } from 'react-native';
-
+import {BACKGROUND} from './src/config/COLOR';
 import AppScreen from './src/components/app-screen';
 import AppMainView from './src/components/app-main-view';
 
@@ -39,6 +39,8 @@ class AppContainer extends React.Component {
   }
 }
 
+export {AppContainer};
+
 export default class App extends React.Component {
   render() {
     return (
@@ -56,6 +58,6 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F5FCFF',
+    backgroundColor: BACKGROUND,
   },
 });
